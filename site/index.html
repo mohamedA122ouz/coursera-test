@@ -31,37 +31,75 @@
     {
       background-color:#404040;
       width: calc(100vw);
-      height: 30px;
+      
       vertical-align: middle;
-      overflow: hidden;
+      /* overflow: hidden; */
+      clear:left;
       user-select:none;
     }
-    li{
-      position: relative;
+    ul>li{
       list-style: none;
       display: inline;
       box-sizing: border-box;
       width: 100px;
-      margin: 10px;
-      padding:10px 30px;
-      vertical-align: middle;
-      margin-top: 50%;
-      cursor: default;
-    }
-    li:hover{
-      list-style: none;
-      display: inline;
-      box-sizing: border-box;
-      width: 100px;
-      margin: 10px;
       text-align: center;
       padding:10px 30px;
+      padding-bottom: 0px;
       vertical-align: middle;
-      margin-top: 50%;
+      cursor: default;
+      float:left;
+      font-size: 16px;
+      cursor: default;
+      height: 3.5em;
+    }
+    ul > li:hover{
+      list-style: none;
+      display: inline;
+      box-sizing: border-box;
+      width: 100px;
+      text-align: center;
+      padding:10px 30px;
+      padding-bottom: 0px;
+      vertical-align: middle;
       cursor: default;
       background-color: #545353e6;
       transition: 250ms;
+      margin-top: 0;
+      float:left;
       filter: brightness(200%);
+    }
+    #group:hover > ol
+    {
+      display: block;
+    }
+    ol{
+      position: absolute;
+      background-color: #404040;
+      z-index: 2;
+      display: none;
+      width: 90px;
+      left:6px;
+    }
+    ul > li > ol > li{
+      display: block;
+      list-style: none;
+      box-sizing: border-box;
+      margin: 0px;
+      padding:2px 5px;
+      /* vertical-align: middle; */
+      cursor: default;
+      height: 100%;
+
+    }
+    ol > li:hover{
+      list-style: none;
+      width: 100%;
+      padding:2px 5px;
+      /* vertical-align: middle; */
+      cursor: default;
+      background-color: #545353e6;
+      transition: 250ms;
+      filter: brightness(60%);
     }
     #mo
     {
@@ -76,17 +114,26 @@
     <nav>
       <ul>
         <li>
-          <span class="material-symbols-outlined" style="margin-top:3px ;">
-            home
-          </span>
+          <span class="material-symbols-outlined" style="margin-top:3px ;">home</span>
           <span id="mo">home</span>
         </li>
-        <li><span class="material-symbols-outlined">
-          groups
+        <li id="group">
+            <span class="material-symbols-outlined">groups</span>
+            <span id="mo">groups</span>
+          <ol>
+            <li>group 1</li>
+            <li>group2</li>
+            <li>group3</li>
+          </ol>
+        </li>
+        <li>
+          <span class="material-symbols-outlined">
+            search
           </span>
-        <span id="mo">groups</span></li>
-        <li>ww</li>
+          <span id="mo">search</span>
+        </li>
       </ul>
+      <div style="clear: left;"></div>
     </nav>
   </header>
   <article></article>
